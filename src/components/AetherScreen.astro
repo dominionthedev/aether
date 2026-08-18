@@ -1,0 +1,13 @@
+---
+import BootScreen from './BootScreen.astro';
+import Terminal from './Terminal.astro';
+---
+
+<div id="crt">
+  <div id="scanlines"></div>
+  <div id="vignette"></div>
+  <div id="screen">
+    <Terminal />
+    <BootScreen />
+  </div>
+</div>
