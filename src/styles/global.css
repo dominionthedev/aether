@@ -1,4 +1,3 @@
-@import "@fontsource-variable/recursive";
 @import "tailwindcss";
 
 :root {
@@ -12,7 +11,7 @@
   --prompt: #33ff66;
   --cursor: #33ff66;
   --glow: 0 0 8px currentColor, 0 0 16px currentColor;
-  --font: "Recursive Variable", monospace;
+  --font: "IBM Plex Mono", monospace;
   --font-size: 15px;
   --line-height: 1.45;
 }
@@ -244,69 +243,6 @@ body {
 .out-ascii {
   color: var(--fg-bright);
   line-height: 1.15;
-}
-
-body.theme-green {
-  --fg: #33ff66;
-  --fg-dim: #1a8a3a;
-  --fg-bright: #66ff99;
-  --accent: #00ff9f;
-  --prompt: #33ff66;
-  --cursor: #33ff66;
-}
-body.theme-amber {
-  --fg: #ffb000;
-  --fg-dim: #996600;
-  --fg-bright: #ffcc44;
-  --accent: #ffcc00;
-  --prompt: #ffb000;
-  --cursor: #ffb000;
-}
-body.theme-cyan {
-  --fg: #00e5ff;
-  --fg-dim: #008899;
-  --fg-bright: #66f0ff;
-  --accent: #00ffcc;
-  --prompt: #00e5ff;
-  --cursor: #00e5ff;
-}
-body.theme-magenta {
-  --fg: #ff55aa;
-  --fg-dim: #993366;
-  --fg-bright: #ff88cc;
-  --accent: #ff3399;
-  --prompt: #ff55aa;
-  --cursor: #ff55aa;
-}
-body.theme-white {
-  --fg: #e0e0e0;
-  --fg-dim: #888;
-  --fg-bright: #fff;
-  --accent: #a0d0ff;
-  --prompt: #e0e0e0;
-  --cursor: #fff;
-}
-
-body.font-ibm {
-  --font: "IBM Plex Mono", monospace;
-}
-body.font-jetbrains {
-  --font: "JetBrains Mono", monospace;
-}
-body.font-inconsolata {
-  --font: "Inconsolata", monospace;
-}
-body.font-source {
-  --font: "Source Code Pro", monospace;
-}
-body.font-commit {
-  --font: "Commit Mono", monospace;
-}
-body.font-victor {
-  --font: "Victor Mono", monospace;
-}
-body.font-system {
-  --font: ui-monospace, "Cascadia Code", "SF Mono", Menlo, Consolas, monospace;
 }
 
 #matrix-canvas {
