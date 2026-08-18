@@ -1,4 +1,4 @@
-import { HOST, USER, VERSION, KERNEL } from "../config";
+import { HOST, USER, VERSION, KERNEL, CREATOR, CREATOR_URL } from "../config";
 import type { Command } from "../types";
 
 const art = `
@@ -16,18 +16,12 @@ export const about: Command = ({}, { print }) => {
   print("Designed as a quiet place for curiosity.");
   print("");
   print("Built with intention.");
-  print("Fonts curated from the finest monospaced traditions.");
   print("No backend. No tracking. Just you and the cursor.");
   print("");
-  print(
-    '<span class="out-dim">Created under the open sky of the universe.</span>',
-  );
+  print(`<span class="out-dim">Built by ${CREATOR} — ${CREATOR_URL}</span>`);
 };
 
-export const neofetch: Command = (
-  {},
-  { print, printRaw, getTheme, getFont },
-) => {
+export const neofetch: Command = ({}, { print, printRaw }) => {
   printRaw(art);
   print("");
   print(
@@ -36,12 +30,11 @@ export const neofetch: Command = (
   print(`  <span class="out-cmd">Host</span>     ${HOST}`);
   print(`  <span class="out-cmd">User</span>     ${USER}`);
   print('  <span class="out-cmd">Shell</span>    aether-sh');
-  print(`  <span class="out-cmd">Theme</span>    ${getTheme()}`);
-  print(`  <span class="out-cmd">Font</span>     ${getFont()}`);
   print(
     '  <span class="out-cmd">Uptime</span>   ∞ (or until you close the tab)',
   );
   print(`  <span class="out-cmd">Kernel</span>   ${KERNEL}`);
+  print(`  <span class="out-cmd">Built by</span> ${CREATOR}`);
 };
 
 export const pwd: Command = ({}, { print, getCurrentDir }) =>

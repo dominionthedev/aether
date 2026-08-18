@@ -4,7 +4,7 @@ import { MatrixRain } from "./matrix";
 import { TerminalOutput, escapeHtml } from "./output";
 import { TerminalState } from "./state";
 import { focusCommandLine } from "./view";
-import type { CommandContext, Font, Theme, TerminalElements } from "./types";
+import type { CommandContext, TerminalElements } from "./types";
 
 export class TerminalController {
   private readonly output: TerminalOutput;
@@ -22,8 +22,6 @@ export class TerminalController {
   }
 
   start(): void {
-    this.applyTheme(this.state.getTheme());
-    this.applyFont(this.state.getFont());
     this.updatePrompt();
     this.bindInput();
   }
@@ -40,10 +38,6 @@ export class TerminalController {
       getPrompt: () => this.getPrompt(),
       getCurrentDir: () => this.state.getCurrentDir(),
       setCurrentDir: (dir) => this.state.setCurrentDir(dir),
-      getTheme: () => this.state.getTheme(),
-      setTheme: (theme) => this.applyTheme(theme),
-      getFont: () => this.state.getFont(),
-      setFont: (font) => this.applyFont(font),
       getHistory: () => this.state.getHistory(),
       matrix: () => this.toggleMatrix(),
       reboot: () => location.reload(),
@@ -58,18 +52,6 @@ export class TerminalController {
 
   private updatePrompt(): void {
     this.elements.prompt.textContent = this.getPrompt();
-  }
-
-  private applyTheme(theme: Theme): void {
-    document.body.classList.remove(`theme-${this.state.getTheme()}`);
-    document.body.classList.add(`theme-${theme}`);
-    this.state.setTheme(theme);
-  }
-
-  private applyFont(font: Font): void {
-    document.body.classList.remove(`font-${this.state.getFont()}`);
-    document.body.classList.add(`font-${font}`);
-    this.state.setFont(font);
   }
 
   private toggleMatrix(): boolean {

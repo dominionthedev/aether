@@ -1,10 +1,6 @@
-import type { Font, Theme } from "./types";
-
 export class TerminalState {
   private history: string[] = [];
   private currentDir = "~";
-  private theme: Theme = "green";
-  private font: Font = "ibm";
   private matrixActive = false;
 
   getHistory(): readonly string[] {
@@ -19,20 +15,6 @@ export class TerminalState {
   }
   setCurrentDir(dir: string): void {
     this.currentDir = dir;
-  }
-
-  getTheme(): Theme {
-    return this.theme;
-  }
-  setTheme(theme: Theme): void {
-    this.theme = theme;
-  }
-
-  getFont(): Font {
-    return this.font;
-  }
-  setFont(font: Font): void {
-    this.font = font;
   }
 
   isMatrixActive(): boolean {

@@ -1,13 +1,3 @@
-export type Theme = "green" | "amber" | "cyan" | "magenta" | "white";
-export type Font =
-  | "ibm"
-  | "jetbrains"
-  | "inconsolata"
-  | "source"
-  | "commit"
-  | "victor"
-  | "system";
-
 export interface FileNode {
   type: "file";
   content: string;
@@ -38,10 +28,6 @@ export interface CommandContext {
   getPrompt: () => string;
   getCurrentDir: () => string;
   setCurrentDir: (dir: string) => void;
-  getTheme: () => Theme;
-  setTheme: (theme: Theme) => void;
-  getFont: () => Font;
-  setFont: (font: Font) => void;
   getHistory: () => readonly string[];
   matrix: () => boolean;
   reboot: () => void;

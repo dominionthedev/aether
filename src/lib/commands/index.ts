@@ -1,7 +1,6 @@
 import { help } from "./help";
 import { cat, cd, ls } from "./filesystem";
 import { about, date, echo, neofetch, pwd, whoami } from "./system";
-import { font, theme } from "./preferences";
 import {
   emacs,
   exit,
@@ -34,8 +33,6 @@ export function createCommands(dependencies: {
     whoami,
     date,
     echo,
-    theme,
-    font,
     matrix: dependencies.matrix,
     fortune,
     void: voidCommand,
