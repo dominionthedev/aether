@@ -9,5 +9,5 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
   site: "https://dominionthedev.github.io",
-  base: "/aether/",
+  base: "/aether",
 });
